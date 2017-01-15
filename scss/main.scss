@@ -1,0 +1,50 @@
+@import "grid-settings";
+@import "neat/neat";
+
+// The usual stuff
+
+html {
+  font-family: 'Heebo', sans-serif;
+  font-size: 1em;
+  color: #ffb193;
+}
+
+
+body{
+  margin: 0;
+  width: 100%;
+}
+
+.wrapper {
+  @include outer-container;
+}
+
+//Hero Layout
+
+.hero {
+  background: #DDF5E2;
+  text-align: center;
+
+  .wrapper {
+    @include outer-container;
+
+    div.display {
+      @include span-columns(6);
+      @include shift(3);
+      background: #DDF5E2;
+      text-align: center;
+      }
+    }
+  }
+
+.main {
+  @include outer-container;
+
+  .halfcol {
+    @include span-columns(6);
+    background: #00CCFF;
+  }
+
+}
+
+// Typography

@@ -3,8 +3,9 @@
 // Change the grid settings
 $column: 90px;
 $gutter: 30px;
-$grid-columns: 10;
+$grid-columns: 12;
 $max-width: 1200px;
+$visual-grid: true;
 
 // Define your breakpoints
 $tablet: new-breakpoint(max-width 768px 8);
