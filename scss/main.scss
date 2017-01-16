@@ -1,11 +1,38 @@
 @import "grid-settings";
 @import "neat/neat";
 
-// The usual stuff
+//
+@mixin wrapper-padding {
+  @include pad(0 $gutter);
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// Allows vertical and/or horizontal centering
+
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    left: inherit;
+    transform: translate(0, -50%);
+  }
+}
+
+// The usual stuf
 
 html {
   font-family: 'Heebo', sans-serif;
-  font-size: 1em;
+  font-size: 16px;
+  font-weight: 400;
   color: #ffb193;
 }
 
@@ -16,35 +43,129 @@ body{
 }
 
 .wrapper {
+  @include wrapper-padding;
   @include outer-container;
 }
 
-//Hero Layout
+//////// Hero Layout
 
 .hero {
   background: #DDF5E2;
-  text-align: center;
+  height: inherit;
+  padding: 4em 0 5em 0;
+  // margin: 1em;
+  // min-height: 298px;
+  // position: relative;
+
+  li.block {
+  @include span-columns(2);
+  @include omega(4n);
+  display: inline-block;;
+  }
+
 
   .wrapper {
     @include outer-container;
+    background: #DDF5E2;
+    // position: relative;
 
-    div.display {
-      @include span-columns(6);
-      @include shift(3);
-      background: #DDF5E2;
-      text-align: center;
-      }
+
+    li.block {
+    @include span-columns(3);
+    @include omega(4n);
     }
+
+    .intro {
+      @include span-columns(12);
+
+      @include media($tablet) { // As defined in _grid-settings.scss
+        @include span-columns(6 of 8);
+      }
+      @include media($mobile) { // As defined in _grid-settings.scss
+        @include span-columns(4);
+      }
+
+
+      &.both {
+        @include center;
+      }
+
+      &.horizontal {
+        @include center(true, false);
+      }
+
+      &.vertical {
+        @include center(false, true);
+      }
+
+// Hero: Blurb
+      .blurb{
+        @include span-columns(8);
+
+        @include media($tablet) { // As defined in _grid-settings.scss
+          @include span-columns(8);
+        }
+        @include media($mobile) { // As defined in _grid-settings.scss
+          @include span-columns(4);
+        }
+      }
+
+    }
+
+
   }
+}
 
 .main {
   @include outer-container;
+  margin: 2em 0;
+  position: relative;
+  // background: #00ccff;
 
-  .halfcol {
-    @include span-columns(6);
-    background: #00CCFF;
-  }
+
+    .halfcol {
+      @include span-columns(6);
+      // background: #ff0000;
+
+
+      @include media($tablet) { // As defined in _grid-settings.scss
+        @include span-columns(4);
+      }
+
+      @include media($mobile) { // As defined in _grid-settings.scss
+        @include span-columns(4);
+      }
+    }
+  // }
+
 
 }
 
-// Typography
+
+
+//////// Typography
+
+.sm-title {
+  font-family: 'Prata', serif;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  // padding: 15em 0 2em 0;
+}
+
+.blurb {
+  font-size: 1.3em;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+a {
+  color: #DF5825;
+}
+
+a:hover{
+  color: #C53C09;
+}
