@@ -209,4 +209,10 @@ a {
 a:hover {
   color: #C53C09; }
 
+span#word {
+  width: 100px;
+  display: block;
+  border-bottom: 2px solid #FFF;
+  text-align: left; }
+
 /*# sourceMappingURL=main.css.map */

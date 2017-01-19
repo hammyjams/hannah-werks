@@ -4,15 +4,15 @@
 <link href="https://fonts.googleapis.com/css?family=Heebo:300|Prata" rel="stylesheet">
 </head>
 <body>
-  <!-- <div class="wrapper">
-
-  </div> -->
+  <script>
+    document.body.className += ' fade-out';
+  </script>
 
   <section class="hero">
-      <!-- <ol>
-        <li>About</li>
-        <li>More</li>
-      </ol> -->
+        <!-- <ol>
+          <li>About</li>
+          <li>More</li>
+        </ol> -->
 
     <div class="wrapper vertical">
       <div class="intro">
@@ -44,10 +44,29 @@
 
         </span>
 
-        <h1>My name is Hannah J. Nicdao. Enchanté.</h1>
+        <h1>My name is Hannah J. Nicdao.</h1>
 
-        <span class="blurb">
-          I am a creative with a keen interest in technology and what makes people tick. I’ve spent the last 8+ years  designing, strategizing, and building in digital spaces around the world with a human-centric approach.<br>
+          <h1>I am a
+          <!-- changing words -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+          <script>
+          $(function () {
+            count = 0;
+            wordsArray = ["creative", "human", "woman"];
+            setInterval(function () {
+              count++;
+              $("#word").fadeOut(0, function () {
+                $(this).text(wordsArray[count % wordsArray.length]).fadeIn(0);
+              });
+            }, 1000);
+          });
+          </script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+          <span id="word">designer</span>
+        </h1>
+
+          <span class="blurb">
+          <p>Curiosity and an annoying love for well-functioning systems leads my passion and creativity. A keen interest in technology and understanding what makes people tick has lead me through 8+ years of designing, strategizing, and building in digital spaces around the world with a human-centric approach.</p>
           <p>I am a New Yorker living life down under as a senior product designer with <a href="#">ustwo Sydney</a>.
           </p>
         </span>
@@ -73,4 +92,9 @@
 
       </section>
     </div>
-</body>
+    <script>
+      $(function() {
+        $('body').removeClass('fade-out');
+      });
+    </script>
+  </body>

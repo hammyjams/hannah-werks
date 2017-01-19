@@ -40,7 +40,14 @@ html {
 body{
   margin: 0;
   width: 100%;
+  // opacity: 1;
+  // transition: 1s opacity;
 }
+
+// body.fade-out {
+//     opacity: 0;
+//     transition: none;
+// }
 
 .wrapper {
   @include wrapper-padding;
@@ -168,4 +175,14 @@ a {
 
 a:hover{
   color: #C53C09;
+}
+
+
+span#word{
+  width: 100px;
+  display: block;
+  // float: right;
+  // background: #00ccff;
+  border-bottom: 2px solid #FFF ;
+  text-align: left;
 }
