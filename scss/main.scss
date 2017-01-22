@@ -148,6 +148,19 @@ body{
 
 }
 
+ul.logos{
+  @include outer-container;
+  width: 100%;
+  // background: #CCC;
+
+  li.block {
+  background: #CCC;
+  min-height: 100px;
+  margin: 1em 0;
+  @include span-columns(2);
+  // @include omega(4n);
+  }
+}
 
 
 //////// Typography
@@ -178,8 +191,8 @@ a:hover{
 }
 
 
-span#word{
-  width: 100px;
+#word{
+  width: 350px;
   display: block;
   // float: right;
   // background: #00ccff;
